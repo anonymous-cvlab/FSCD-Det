@@ -1,0 +1,14 @@
+target domain:
+aachen_000034_000019_leftImg8bit_foggy_beta_0.02.png
+bremen_000001_000019_leftImg8bit_foggy_beta_0.02.png
+bremen_000208_000019_leftImg8bit_foggy_beta_0.02.png
+bremen_000293_000019_leftImg8bit_foggy_beta_0.02.png
+bremen_000296_000019_leftImg8bit_foggy_beta_0.02.png
+cologne_000136_000019_leftImg8bit_foggy_beta_0.02.png
+strasbourg_000001_037906_leftImg8bit_foggy_beta_0.02.png
+stuttgart_000179_000019_leftImg8bit_foggy_beta_0.02.png
+ulm_000035_000019_leftImg8bit_foggy_beta_0.02.png
+ulm_000076_000019_leftImg8bit_foggy_beta_0.02.png
+
+source domain:
+<entire Cityscapes normal datasets(2975 images)>
