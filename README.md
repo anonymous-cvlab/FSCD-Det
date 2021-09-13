@@ -17,7 +17,8 @@ This repository contains our PyTorch implementation of Object-Aware Few-Shot Uns
 ### **FSCD Object Detection Framework**
 <img src='./imgs/Figure1-Overview.png' align="right" width=960>
 
-<br>
+<br><br><br>
+<br><br>&nbsp;
 
 ### **Network Architecture**
 <img src='./imgs/Figure2-NetworkArchitecture.png' align="right" width=960>
@@ -67,12 +68,15 @@ In the first six rows, we show how different modules work alone and interact wit
 
    We use [TIDE](https://github.com/dbolya/tide) to further analysis the detailed aspect where our method is improving during detection. The table listed below is the relative and absolute error contributions to the detection results on Cityscapes->FoggyCityscapes produced by TIDE. 
    
-   
+<sub>
+
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | Cls          | Loc          | Both        | Dupe        | Bkg         | Miss          | FP    | FN    |
 |:---------:|--------------|--------------|-------------|-------------|-------------|---------------|-------|-------|
 | Source    | 4.79(11.84%) | 4.14(10.24%) | 0.56(1.38%) | 0.15(0.37%) | 0.23(0.57%) | 30.57(75.59%) | 8.36  | 41.60 |
 | CUT       | 6.99(19.68%) | 6.39(17.99%) | 0.90(2.53%) | 0.19(5.34%) | 0.59(1.66%) | 20.46(57.60%) | 12.82 | 32.90 |
 | OA-FSUI2IT | 6.64(20.78%) | 6.59(20.63%) | 1.59(4.97%) | 0.22(0.69%) | 0.78(2.44%) | 16.14(50.50%) | 16.14 | 27.99 |
+
+</sub>
    
    
 ## Performance
@@ -129,9 +133,7 @@ Note that Bold means the best score other than Oracle.
 | OA-FSUI2IT    | **28.6** | **28.6** | **30.3** | **53.4** |  8.3 | **32.1** | **20.4** | 17.9 | 39.5 | **33.4** |
 | Oracle             | 40.9 | 37.0 | 40.3 | 67.2 | 34.7 | 45.3 | 30.2 | 46.0 | 59.6 | 49.1 |
 
-Note that the class "TRAIN" is omit here, as stated in the paper, there is no "TRAIN" instance in the validation set for BDD100k[61] contains only 179 Train instances.
-
-### KITTI to Cityscapes 
+### Kitti to Cityscapes 
 
 | **FasterRCNN<br> KITTI** | mAP@50 | person | rider | car | train |
 |:----------------:|--------|--------|--------|--------|--------|
@@ -157,7 +159,7 @@ Note that the class "TRAIN" is omit here, as stated in the paper, there is no "T
    
 ## Translation Results
 
-### Cityscapes Clear to Foggy
+### Cityscapes Normal to Foggy
 <p float='left'>
 <img src="./imgs/Cityscapes-Normal2Foggy/hamburg_000000_013577_leftImg8bit.png" width="400px"/>
 <img src="./imgs/Cityscapes-Normal2Foggy/bochum_000000_015038_leftImg8bit.png" width="400px"/>
@@ -165,14 +167,14 @@ Note that the class "TRAIN" is omit here, as stated in the paper, there is no "T
 <img src="./imgs/Cityscapes-Normal2Foggy/Cityscapes-Normal2Foggy.gif" width="800px"/>
 <img src="./imgs/Cityscapes-Normal2Foggy/Cityscapes-Normal2Foggy_2.gif" width="800px"/>
 
-### BDD100k Day to Night
+### BDD100k Daytime to Nighttime
 <p float='left'>
 <img src ="./imgs/BDD100k-Day2Night/43d4a202-42f1d039.png" width="400px"/>
 <img src="./imgs/BDD100k-Day2Night/2cf343a9-6fa7374c.png" width="400px"/>
 </p>
 <img src="./imgs/BDD100k-Day2Night/BDD100k-Day2Night.gif" width="800px"/>
 
-### KITTI to Cityscapes
+### Kitti to Cityscapes
 <p float='left'>
 <img src ="./imgs/Kitti2Cityscapes/001205.png" width="400px"/>
 <img src="./imgs/Kitti2Cityscapes/002067.png" width="400px"/>
@@ -180,7 +182,7 @@ Note that the class "TRAIN" is omit here, as stated in the paper, there is no "T
 <img src="./imgs/Kitti2Cityscapes/Kitti2Cityscapes.gif" width="800px"/>
 <img src="./imgs/Kitti2Cityscapes/Kitti2Cityscapes_2.gif" width="800px"/>
 
-## Detection Result
+## Few-Shot Cross Domain Object Detection Result
 
 ### Cityscapes Clear to Foggy
 <img src="./imgs/Cityscapes-Normal2Foggy/Normal-to-Foggy.png" width="800px"/>
@@ -192,13 +194,13 @@ Note that the class "TRAIN" is omit here, as stated in the paper, there is no "T
 <img src ="imgs/Kitti2Cityscapes/Kitti-to-Cityscapes.png" width="800px">
 
 
-## t\-SNE Result
-To validate our translation method, we use TSNE to visualize distribution of images from source domain, target domain and generated. We use [pixplot](https://github.com/YaleDHLab/pix-plot) for t\-SNE visualization.
+## Feature distributions visualization
+To validate our translation method, we use t\-SNE to visualize distribution of images from source domain, target domain and generated. We use [pixplot](https://github.com/YaleDHLab/pix-plot) for t\-SNE visualization.
 
-### Normal to Foggy
+### Cityscapes Normal to Foggy
 [<img src="./imgs/cityscapes_clear_and_foggy_and_fake_scaled5.png" width="800px"/>](https://github.com/anonymous-cvlab/FSCD-Det/tree/main/imgs/tsne_results/cityscapes_clear_and_foggy_and_fake_scaled3.png)
 
-### Daytime Clear to Nighttime Clear
+### BDD100k Daytime Clear to Nighttime Clear
 [<img src ="imgs/bdd100k_day_and_night_and_fake_scaled5.png" width="800px">](https://github.com/anonymous-cvlab/FSCD-Det/tree/main/imgs/tsne_results/bdd100k_day_and_night_and_fake_scaled3.png)
 
 ### Kitti to Cityscapes
