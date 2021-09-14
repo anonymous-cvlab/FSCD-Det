@@ -64,20 +64,6 @@ We implement  the ablation study to investigate the effectiveness of each module
 
 In the first six rows, we show how different modules work alone and interact with each other. As we can see in the table, the performance gradually increase as more modules involving. From 5th row to 8th row, we present the impact of different numbers in patch pyramid contrastive learning. The more patches there are, the more mAP increment our OA-FSUI2IT can achieve.
 
-### Detection Error Analysis
-
-   We use [TIDE](https://github.com/dbolya/tide) to further analysis the detailed aspect where our method is improving during detection. The table listed below is the relative and absolute error contributions to the detection results on Cityscapes->FoggyCityscapes produced by TIDE. 
-   
-<sub>
-
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | Cls          | Loc          | Both        | Dupe        | Bkg         | Miss          | FP    | FN    |
-|:---------:|--------------|--------------|-------------|-------------|-------------|---------------|-------|-------|
-| Source    | 4.79(11.84%) | 4.14(10.24%) | 0.56(1.38%) | 0.15(0.37%) | 0.23(0.57%) | 30.57(75.59%) | 8.36  | 41.60 |
-| CUT       | 6.99(19.68%) | 6.39(17.99%) | 0.90(2.53%) | 0.19(5.34%) | 0.59(1.66%) | 20.46(57.60%) | 12.82 | 32.90 |
-| OA-FSUI2IT | 6.64(20.78%) | 6.59(20.63%) | 1.59(4.97%) | 0.22(0.69%) | 0.78(2.44%) | 16.14(50.50%) | 16.14 | 27.99 |
-
-</sub>
-   
    
 ## Performance
 
@@ -182,7 +168,7 @@ Note that Bold means the best score other than Oracle.
 <img src="./imgs/Kitti2Cityscapes/Kitti2Cityscapes.gif" width="800px"/>
 <img src="./imgs/Kitti2Cityscapes/Kitti2Cityscapes_2.gif" width="800px"/>
 
-## Few-Shot Cross Domain Object Detection Result
+## Few-Shot Cross Domain Object Detection Results
 
 ### Cityscapes Clear to Foggy
 <img src="./imgs/Cityscapes-Normal2Foggy/Normal-to-Foggy.png" width="800px"/>
@@ -193,6 +179,30 @@ Note that Bold means the best score other than Oracle.
 ### KITTI to Cityscapes
 <img src ="imgs/Kitti2Cityscapes/Kitti-to-Cityscapes.png" width="800px">
 
+
+### Detection Error Analysis
+
+   We use [TIDE](https://github.com/dbolya/tide) to further analysis the detailed aspect where our method is improving during detection. The table listed below is the relative and absolute error contributions to the detection results on Cityscapes->FoggyCityscapes produced by TIDE. 
+
+
+<sub>
+
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | Cls          | Loc          | Both        | Dupe        | Bkg         | Miss          | FP    | FN    |
+|:---------:|--------------|--------------|-------------|-------------|--------|--------------------|-------|-------|
+| Source    | 4.79 | 4.14 | 0.56 | 0.15 | 0.23| 30.57 | 8.36  | 41.60 |
+|                  | 11.84%| 10.24%| 1.38% | 0.37% | 0.57% | 75.59% |||
+| CUT       | 6.99| 6.39 | 0.90 | 0.19 | 0.59 | 20.46 | 12.82 | 32.90 |
+|                 |19.68% | 17.99% | 2.53% | 5.34% | 1.66% | 57.60%|||
+| OA-FSUI2IT | 6.64 | 6.59| 1.59 | 0.22 | 0.78 | 16.14 | 16.14 | 27.99 |
+| |  20.78%| 20.63% | 4.97% | 0.69% | 2.44% | 50.50%| ||
+
+</sub>
+   
+<p float='left'>
+<img src ="./imgs/tide/c2f_origin_small.png" width="200px"/>
+<img src="./imgs/tide/c2f_cut_small.png" width="200px"/>
+<img src="./imgs/tide/c2f_fscd_small.png" width="200px"/>
+</p>
 
 ## Feature distributions visualization
 To validate our translation method, we use t\-SNE to visualize distribution of images from source domain, target domain and generated. We use [pixplot](https://github.com/YaleDHLab/pix-plot) for t\-SNE visualization.
