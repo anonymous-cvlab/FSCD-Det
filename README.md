@@ -95,7 +95,7 @@ Note that Bold means the best score other than Oracle.
 | OA-FSUI2IT                | **42.3** | **47.5** | **53.8** | **64.1** | **27.8** | **45.9** | 11.5 | **35.9** | **52.3** |
 | Oracle                         | 48.6 | 53.1 | 59.9 | 71.1 | 31.3 | 48.5 | 29.1 | 39.8 | 55.8 |
 
-| **FCOS<br> Cityscapes** | mAP  | person | rider | car  | truck  | bus  | train | motorcycle | bicycle |
+| **FCOS<br> &nbsp;Cityscapes&nbsp;** | mAP  | person | rider | car  | truck  | bus  | train | motorcycle | bicycle |
 |:---------------------:|--------|--------|--------|--------|--------|--------|------|------|--------|
 | Source               | 14.9 | 21.9 | 17.0 | 29.9 |   2.8 | 11.5 | 0.5 | 6.1 | 25.1 |
 | CUT                    | 23.3 | 33.1 | 30.6 | 48.3 |   7.6 | 23.6 | 1.7 | 6.4 | 34.9 |
@@ -103,7 +103,7 @@ Note that Bold means the best score other than Oracle.
 | Oracle                | 30.5 | 40.5 | 38.8 | 61.1 | 14.9 | 33.0 | 11.0 | 8.4 | 36.2 |
 
 
-| **YOLO<br> Cityscapes** | mAP  | person | rider | car  | truck  | bus  | train | motorcycle | bicycle |
+| **YOLO<br> &nbsp;Cityscapes&nbsp;** | mAP  | person | rider | car  | truck  | bus  | train | motorcycle | bicycle |
 |:--------------------:|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | Source              | 27.2 | 29.5 | 38.3 | 41.4 | 18.0 | 28.9 | 5.0   | 22.9 | 33.8 |
 | CUT                   | 34.3 | 33.9 | **43.2** | 51.9 | **23.2** | 40.3 | 17.8 | **27.2** | 36.4 |
@@ -119,14 +119,14 @@ Note that Bold means the best score other than Oracle.
 | OA-FSUI2IT   | **30.5** | **27.5** | **28.2** | **53.3** | **16.2** | **39.7** | **20.7** | **13.0** | **43.7** | **32.1** |
 | Oracle            | 48.0 | 44.3 | 46.8 | 73.7 | 36.0 | 55.8 | 26.9 | 37.8 | 58.0 | 52.7 |
 
-| **FCOS <br>BDD100k** | mAP@50 | bike | bus  | car  | motor | person | rider | traffic light | traffic sign | truck |
+| **FCOS <br>&nbsp;&nbsp;&nbsp;BDD100k&nbsp;&nbsp;&nbsp;** | mAP@50 | bike | bus  | car  | motor | person | rider | traffic light | traffic sign | truck |
 |:------------------:|--------|--------|-------|---------|-------|--------|---------|--------|--------|-------|
 | Source           | 17.1 |   9.7 | 10.4 | 44.4 |   1.4 | 24.9 |    5.9 | 13.3 | 40.3 | 21.2 |
 | CUT                | 14.3 |   5.3 |    9.1 | 42.7 |   0.5 | 21.4 |    5.5 |   6.7 | 34.0 | 17.2 |
 | OA-FSUI2IT  | **24.3** | **17.4** | **17.1** | **49.7** |   **5.0** | **34.1** | **10.3** | **15.6** | **43.1** | **26.1** |
 | Oracle           | 42.5 | 27.6 | 45.6 | 73.6 | 29.2 | 52.5 | 20.9 | 57.9 | 67.0 | 51.1 |
 
-| **YOLO <br>BDD100k**  | mAP@50 | bike | bus  | car  | motor | person | rider | traffic light | traffic sign | truck |
+| **YOLO <br>&nbsp;&nbsp;&nbsp;BDD100k&nbsp;&nbsp;&nbsp;**  | mAP@50 | bike | bus  | car  | motor | person | rider | traffic light | traffic sign | truck |
 |:-------------------:|--------|--------|--------|--------|--------|--------|-------|---------|--------|-------|
 | Source             | 24.4 | 20.9 | 24.7 | 51.0 |   **8.6** | 29.9 | 16.2 | **19.3** | **42.2** | 31.2 |
 | CUT                  | 18.3 | 10.6 | 23.9 | 47.4 |   5.9 | 24.1 |    9.1 | 8.0   | 31.1 | 22.6 |
@@ -142,19 +142,19 @@ Note that Bold means the best score other than Oracle.
 | OA-FSUI2IT       | **26.3** | **27.5** | 16.9 | **42.3** | **18.6** |
 | Oracle                | 54.8 | 57.4 | 63.4 | 74.0 | 24.5 |
 
-| **FCOS <br>KITTI** | mAP@50 | person | rider | car | train |
+| **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FCOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>KITTI** | mAP@50 | person | rider | car | train |
 |:------------------:|--------|--------|--------|--------|------|
 | Source           | 20.3 | 22.8 | **18.9** | 38.8 | 0.6 |
 | CUT                | 18.5 | 18.9 | 12.0 | 41.3 | 1.9 |
 | OA-FSUI2IT  | **21.9** | **24.3** | 14.3 | **42.7** | **4.2** |
 | Oracle           | 44.3 | 49.0 | 52.6 | 66.7 | 9.0 |
-<!-- 
-| **YOLO <br>KITTI** | mAP@50 | person | rider | car  | truck | bus   |
-|:----------------:|--------|--------|-------|------|-------|-------|
-| Source           | 18.9   | 21.1   | 10.3  | 35.4 | 5.5   | 22.4  |
-| CUT              | 16.4   | 19.3   |***13.5***| 38.8 | 5.1   | 5.5   |
-| OA-FSUI2IT        |***21.7***|***21.9***| 12.5  |***39.1***|***7.1***|***27.7***|
-| Oracle           |**44.2**  |**42.9**  |**49.3** |**65.9**|**30.9** |**31.9** | -->
+
+| **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YOLO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <br>KITTI** | mAP@50 | person | rider | car | bus   |
+|:------------------:|--------|--------|--------|--------|--------|
+| Source           | 19.4 | 19.4 | 16.7 | 37.0 |   4.5 |
+| CUT                | 15.9 | 14.1 |    7.5 | 40.5 |   1.3 |
+| OA-FSUI2IT  | **21.3** | **17.1** | **12.4** | **41.8** | **13.8** |
+| Oracle           | 47.5 | 42.9 | 49.3 | 65.9 | 31.9 |
 
    
 ## Translation Results
