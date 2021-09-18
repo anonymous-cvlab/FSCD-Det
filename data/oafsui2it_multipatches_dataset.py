@@ -15,7 +15,7 @@ def unnormalize(tensor, mean, std):
 		t.mul_(s).add_(m)
 	return tensor
 
-class UnalignedADAMultiPatchesDataset(BaseDataset):
+class OAFSUI2ITMultipatchesDataset(BaseDataset):
 	"""
 	This dataset class can load unaligned/unpaired datasets.
 
@@ -90,7 +90,7 @@ class UnalignedADAMultiPatchesDataset(BaseDataset):
 
 		data = {'A': A, 'B': B, 'A_paths': A_path, 'B_paths': B_path}
 		# extend with different ratio
-		A_extend = []
+		A_patches = []
 		ratios = self.opt.ratios
 		if ratios is None and self.opt.isTrain:
 			return data
@@ -106,9 +106,9 @@ class UnalignedADAMultiPatchesDataset(BaseDataset):
 																		transforms.ToTensor(),
 																		transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 																	])
-			A_extend.append(trans(A_copy))
-		data['A_extend'] = A_extend
-		return data #{'A': A, 'B': B, 'A_extend': A_extend, 'A_paths': A_path, 'B_paths': B_path}
+			A_patches.append(trans(A_copy))
+		data['A_extend'] = A_patches
+		return data
 
 	def __len__(self):
 		""" Return the total number of images in the dataset.

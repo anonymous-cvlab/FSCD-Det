@@ -1,4 +1,4 @@
-# OA-FSUI2IT: A Novel Few-Shot Cross Domain Object Detection Framework with Object-aware Few-shot Unsupervised Image-to-Image Translation
+# OA-FSUI2IT: A Novel Few-Shot Cross Domain Object Detection Framework with Object-Aware Few-shot Unsupervised Image-to-Image Translation
 
 <img src='./imgs/Cityscapes-Normal2Foggy/Cityscapes-Normal2Foggy.gif' align="right" width=960>
 

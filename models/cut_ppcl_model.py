@@ -9,7 +9,7 @@ from torchvision import transforms
 
 from util.util import tensor2im
 
-class CUTFPNModel(BaseModel):
+class CUTPPCLModel(BaseModel):
     """ This class implements CUT and FastCUT model, described in the paper
     Contrastive Learning for Unpaired Image-to-Image Translation
     Taesung Park, Alexei A. Efros, Richard Zhang, Jun-Yan Zhu

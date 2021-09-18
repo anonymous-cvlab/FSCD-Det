@@ -12,7 +12,7 @@ import cv2
 import os
 
 
-class CUTADAFPNModel(BaseModel):
+class OAFSUI2ITModel(BaseModel):
     """ This class implements CUT and FastCUT model, described in the paper
     Contrastive Learning for Unpaired Image-to-Image Translation
     Taesung Park, Alexei A. Efros, Richard Zhang, Jun-Yan Zhu
@@ -200,7 +200,7 @@ class CUTADAFPNModel(BaseModel):
         self.real_A = input['A' if AtoB else 'B'].to(self.device)
         self.real_B = input['B' if AtoB else 'A'].to(self.device)
         self.image_paths = input['A_paths' if AtoB else 'B_paths']
-        # For FPN
+        # PPCL
         self.real_A_extend = []
         if 'A_extend' in input:
             for i in range(len(input['A_extend'])):
@@ -214,6 +214,7 @@ class CUTADAFPNModel(BaseModel):
             if self.flipped_for_equivariance:
                 self.real = torch.flip(self.real, [3])
 
+        # SSCC
         self.horizontal_flip = np.random.random() < self.opt.hflip and self.opt.isTrain
         self.vertical_flip = np.random.random() < self.opt.vflip and self.opt.isTrain
         if self.horizontal_flip and self.vertical_flip:
@@ -293,12 +294,13 @@ class CUTADAFPNModel(BaseModel):
         if self.opt.lambda_NCE > 0.0:
             self.loss_NCE = self.calculate_NCE_loss(self.real_A, self.fake_B)
             self.loss_extend_NCE = 0
+            # PPCL
             for extend_real, extend_fake in zip(self.real_A_extend, self.extend_fakes):
                 self.loss_extend_NCE += self.calculate_NCE_loss(extend_real, extend_fake)
         else:
             self.loss_NCE, self.loss_NCE_bd = 0.0, 0.0
 
-        # Flip Consistency Loss
+        # Self-Supervised Consistency Loss
         flip_fake = self.flip_fake
         if self.vertical_flip or self.horizontal_flip:
             pred_flip_fake = self.netD(flip_fake)
