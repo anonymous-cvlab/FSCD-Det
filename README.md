@@ -226,6 +226,14 @@ We use MMDetection's default settings of Faster RCNN (short side 600)/FCOS (shor
 |FCOS|22.9|43.67|
 |YOLOv3|49.4|20.24|
 
+## Task Localization
+Few-Shot Cross-Domain Object Detection locates in cross-domain object detection, an intersection area of domain adaptation and object detection. The task can be formulated as follow:
+
+Given a source domain with sufficient images $x_s$ and corresponding $y={B, C}$ which indicates bounding box and category annotation, and a target domain only with few images $x_t$ where $|x_t| << |x_s|$, we aim to obtain an improved object detector in the target domain. 
+
+Achieving this goal can not only ease the burden of laborious collecting and annotating working each time when a new target domain is required, but also improves the detection in adverse weather and conditions where large scale training datasets is hard to obtain.
+
+[<img src="imgs/response_1.png" width="800px">](https://github.com/anonymous-cvlab/FSCD-Det/tree/main/imgs/response_1.png)
 
 ## Acknowledgments
 Our code is developed based on [contrastive-unpaired-translation](https://github.com/taesungp/contrastive-unpaired-translation/). Part of adaptive discriminator augmentation borrows from [stylegan2-ada-pytorch](https://github.com/NVlabs/stylegan2-ada-pytorch). 
